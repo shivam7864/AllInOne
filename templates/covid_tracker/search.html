@@ -1,0 +1,41 @@
+{% extends 'covid_tracker/base.html' %}
+{% block body %}
+
+{% if msg%}
+<div class="mx-auto shadow mt-5" style="width: 500px;">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://media.istockphoto.com/photos/coronavirus-isolated-on-white-background-3d-render-picture-id1213843917?b=1&k=20&m=1213843917&s=170667a&w=0&h=M4malZ_SwT4jUFMuEuLp5qsO-Okqya3kwdUC4aMYUkc=" class="img-fluid rounded-start" alt="..." style="margin-top: 40px; ">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h3 class="card-title">{{msg}}</h3>
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+{%else%}
+<div class="mx-auto shadow mt-5" style="width: 500px;">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://media.istockphoto.com/photos/coronavirus-isolated-on-white-background-3d-render-picture-id1213843917?b=1&k=20&m=1213843917&s=170667a&w=0&h=M4malZ_SwT4jUFMuEuLp5qsO-Okqya3kwdUC4aMYUkc=" class="img-fluid rounded-start" alt="..." style="margin-top: 40px; ">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h3 class="card-title"><u>{{query}}</u></h3>
+              <p class="card-text">New Confirmed Cases-<b>{{nc}}</b></p>
+              <p class="card-text">Total Confirmed Cases-<b>{{tc}}</b></p>
+              <p class="card-text">New Confirmed Deaths-<b>{{nd}}</b></p>
+              <p class="card-text">Total Confirmed Deaths-<b>{{td}}</b></p>
+              <p class="card-text"><small class="text-muted">Last updated <b>{{ts}}</b></small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {%endif%}
+{%endblock%}

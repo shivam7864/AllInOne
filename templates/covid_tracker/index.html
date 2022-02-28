@@ -1,0 +1,41 @@
+{% extends 'covid_tracker/base.html' %}
+{% block body %}
+<h1 style="text-align: center;" class="mt-2">Global Data</h1>
+<div class="container d-flex mt-5" >
+<div class="card" style="width: 18rem;">
+    
+    <div class="card-body">
+      <h5 class="card-title">Total Confirmed</h5>
+      <p class="card-text">{{res.Global.NewConfirmed}}</p>
+      
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    
+    <div class="card-body">
+      <h5 class="card-title">Total Confirmed</h5>
+      <p class="card-text">{{res.Global.TotalConfirmed}}</p>
+      
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    
+    <div class="card-body">
+      <h5 class="card-title">New Deaths</h5>
+      <p class="card-text">{{res.Global.NewDeaths}}</p>
+      
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    
+    <div class="card-body">
+      <h5 class="card-title">Total Deaths</h5>
+      <p class="card-text">{{res.Global.TotalDeaths}}</p>
+      
+    </div>
+  </div>
+</div>
+{%endblock%}

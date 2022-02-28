@@ -1,0 +1,31 @@
+{% extends 'covid_tracker/base.html' %}
+{% block body %}
+<h1 style="text-align: center;" class="mt-2">CountryWise Data</h1>
+<table class="table mx-2">
+    <thead>
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">Country</th>
+        <th scope="col">New Confirmed</th>
+        <th scope="col">Total Confirmed</th>
+        <th scope="col">New Deaths</th>
+        <th scope="col">Total Deaths</th>
+      </tr>
+    </thead>
+    <tbody>
+        {%for c in res.Countries%}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{c.Country}}</td>
+        <td>{{c.NewConfirmed}}</td>
+        <td>{{c.TotalConfirmed}}</td>
+        <td>{{c.NewDeaths}}</td>
+        <td>{{c.TotalDeaths}}</td>
+        
+      </tr>
+      {%endfor%}
+        
+    </tbody>
+  </table>
+
+{%endblock%}

@@ -1,0 +1,38 @@
+{% extends 'news/base.html'%}
+
+{% block css %} 
+
+
+<style>
+
+</style>
+
+{% endblock %}
+
+
+
+{% block body %}
+
+<div class="container my-3">
+  <div class="row">
+    {% for c in res.articles %}
+    <div class="col-md-4">
+      <div class="card my-4" style="width: 18rem; height: 450px;">
+        {% if c.urlToImage %}
+        <img src={{c.urlToImage}} class="card-img-top" alt="....">
+        {% else %}
+        <img src="https://kchanews.com/wp-content/uploads/2014/09/bigstock-Breaking-News-Screen-36237841.jpg" class="card-img-top" alt="....">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{c.title|slice:"0:30"}}...</h5>
+          <p class="card-text">{{c.description|slice:"0:60"}}...</p>
+          <p class="card-text">Source- {{c.source.name}}</p>
+          <a href={{c.url}} target="_blank" class="btn btn-primary">Read Full News</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
